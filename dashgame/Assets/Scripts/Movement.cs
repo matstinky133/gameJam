@@ -12,8 +12,11 @@ public class Movement : MonoBehaviour
     [SerializeField] float _jumpForce = 3f;
     [SerializeField] float _wallJumpForce = 1f;
     [SerializeField] float _slideForce = 10f;
-    [SerializeField] bool _isgrounded = false;
-    [SerializeField] bool _touchingWall = false;
+    [SerializeField] public bool _isgrounded = false;
+    [SerializeField] public bool _touchingWall = false;
+
+    private float _wallJumpCooldown = 0.3f;
+    private float _wallJumpTimer = 0f;
 
     [SerializeField] InputAction _playerControls;
 
@@ -29,14 +32,14 @@ public class Movement : MonoBehaviour
     {
         _playerControls.Disable();
     }
-        
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _player = this.transform;
         _playerRB = GetComponent<Rigidbody2D>();
-        
-        
+
+
     }
 
     // Update is called once per frame
@@ -46,9 +49,12 @@ public class Movement : MonoBehaviour
         WallSlide();
         WallJump();
         Jump();
+        if(_wallJumpTimer < _wallJumpCooldown)
+        {
+            _wallJumpTimer += Time.deltaTime;
+        }
 
     }
-
     private void WallSlide()
     {
         if (!_isgrounded && _touchingWall && _playerRB.linearVelocityY < 0)
@@ -57,7 +63,7 @@ public class Movement : MonoBehaviour
 
             _playerRB.linearVelocityY = _slideForce;
             //_speed = _maxSpeed;
-            
+
 
         }
     }
@@ -65,8 +71,8 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        
-        
+
+
         //if(_touchingWall)
         //{
         //    _playerRB.linearVelocityY = _slideForce;
@@ -75,11 +81,12 @@ public class Movement : MonoBehaviour
 
     private void WallJump()
     {
-        if (!_isgrounded && _touchingWall && _playerControls.triggered)
+        if (!_isgrounded && _touchingWall && _playerControls.triggered && _wallJumpTimer >= _wallJumpCooldown)
         {
             _direction = _direction * -1;
             _speed = _maxSpeed;
             _playerRB.AddForce(new Vector2(_wallJumpForce, _wallJumpForce), ForceMode2D.Impulse);
+            _wallJumpTimer = 0;
 
         }
     }
@@ -91,7 +98,7 @@ public class Movement : MonoBehaviour
             this.GetComponent<Rigidbody2D>().AddForceY(_jumpForce, ForceMode2D.Impulse);
             _isgrounded = false;
             Debug.Log("jump input pressed");
-            
+
         }
     }
 
@@ -104,32 +111,8 @@ public class Movement : MonoBehaviour
         {
             _speed += _speedBuildup;
         }
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Ground"))
-        {
-            _isgrounded = true;
-            return;
-        }
-        if(collision.CompareTag("Wall"))
-        {
-            _touchingWall = true;
-            _speed = 0;
-        }
 
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Ground"))
-        {
-            _isgrounded = false;
-        }
-        if(collision.CompareTag("Wall"))
-        {
-            _touchingWall = false;
-        }
-    }
+    
 
 }
