@@ -944,9 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformMoveScript
   timeToReturn: 2
-  _timer: 0
   _speed: 2
-  _startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &929353602
 GameObject:
   m_ObjectHideFlags: 0
