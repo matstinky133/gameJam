@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -41,12 +42,25 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
+
+        WallSlide();
         WallJump();
+        Jump();
 
     }
 
-    
+    private void WallSlide()
+    {
+        if (!_isgrounded && _touchingWall && _playerRB.linearVelocityY < 0)
+        {
+            //_playerRB.AddRelativeForceY(_slideForce);
+
+            _playerRB.linearVelocityY = _slideForce;
+            //_speed = _maxSpeed;
+            
+
+        }
+    }
 
     private void FixedUpdate()
     {
