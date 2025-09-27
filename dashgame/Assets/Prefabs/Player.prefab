@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8153455544970263895}
   - component: {fileID: 8624336780490040003}
+  - component: {fileID: 3797691604034717797}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -90,3 +91,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3797691604034717797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863642684599666948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cffdb6152b0f24fa19f57e4fb866ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  _maxSpeed: 20
+  _speed: 0
+  _speedBuildup: 2
+  _direction: 1
+  _jumpForce: 3
+  _wallJumpForce: 1
+  _slideForce: 10
+  _isgrounded: 0
+  _touchingWall: 0
+  _playerControls:
+    m_Name: Player Controls
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: b8a02761-0288-4d03-bc58-b61edac81fe0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: aa5a3799-e1f0-4ad9-9f69-df629448d47b
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 0
+    m_Flags: 0
+  _constantForce2D: {fileID: 0}
