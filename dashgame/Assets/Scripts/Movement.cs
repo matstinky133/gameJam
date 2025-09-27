@@ -46,30 +46,54 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        WallSlide();
         WallJump();
         Jump();
         if(_wallJumpTimer < _wallJumpCooldown)
         {
             _wallJumpTimer += Time.deltaTime;
         }
+        
 
     }
-    private void WallSlide()
+    //private void WallSlide()
+    //{
+    //    if (!_isgrounded && _touchingWall && _playerRB.linearVelocityY < 0)
+    //    {
+    //        //_playerRB.AddRelativeForceY(_slideForce);
+
+    //        _playerRB.linearVelocityY = _slideForce;
+    //        //_speed = _maxSpeed;
+
+
+    //    }
+    //}
+    private void WallSlide2()
     {
-        if (!_isgrounded && _touchingWall && _playerRB.linearVelocityY < 0)
+        if (_touchingWall)
         {
-            //_playerRB.AddRelativeForceY(_slideForce);
+            //_playerRB.linearVelocityY = -2;
+            _playerRB.linearVelocityX = 0f;     
+        }
+        if (!_isgrounded && _touchingWall &&  _playerRB.linearVelocityY <= 0)
+        {
+            
+                //_playerRB.AddRelativeForceY(_slideForce);
 
-            _playerRB.linearVelocityY = _slideForce;
-            //_speed = _maxSpeed;
+                _playerRB.linearVelocityY = _slideForce;
+                //_speed = _maxSpeed;
 
+
+            
+        }
+        else
+        {
+            //_playerRB.linearVelocityY = 0;
 
         }
     }
-
     private void FixedUpdate()
     {
+        WallSlide2();
         Move();
 
 

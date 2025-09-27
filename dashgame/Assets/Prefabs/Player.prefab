@@ -299,8 +299,8 @@ Transform:
   m_GameObject: {fileID: 1863642684599666948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.69326, y: -1.1542, z: 0}
-  m_LocalScale: {x: 1.1026537, y: 1.1026537, z: 1.1026537}
+  m_LocalPosition: {x: -0.69326, y: -0.84718, z: 0}
+  m_LocalScale: {x: 0.62068915, y: 0.62068915, z: 0.62068915}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3263923407499066874}
@@ -327,11 +327,11 @@ MonoBehaviour:
   _speed: 0
   _speedBuildup: 2
   _direction: 1
-  _jumpForce: 8
-  _wallJumpForce: 8
-  _slideForce: -4.63
+  _jumpForce: 6.53
+  _wallJumpForce: 9.6
+  _slideForce: -6
   _isgrounded: 0
-  _touchingWall: 0
+  _touchingWall: 1
   _playerControls:
     m_Name: Player Controls
     m_Type: 1
@@ -601,8 +601,8 @@ Transform:
   m_GameObject: {fileID: 6237645683911549229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000047943, y: -0.94, z: 0}
-  m_LocalScale: {x: 1.179045, y: 0.8945332, z: 1}
+  m_LocalPosition: {x: 0.00000009603, y: -0.94, z: 0}
+  m_LocalScale: {x: 0.6895, y: 0.8945332, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8153455544970263895}
