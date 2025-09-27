@@ -8,9 +8,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 451432943772172926, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.12411022
+      objectReference: {fileID: 0}
+    - target: {fileID: 451432943772172926, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451432943772172926, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559432664675805155, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559432664675805155, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559432664675805155, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.69411767
+      objectReference: {fileID: 0}
     - target: {fileID: 1681097034775833200, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
       propertyPath: _playerControls.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/upArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878354933197642123, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878354933197642123, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878354933197642123, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2951136001574694877, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
       propertyPath: _isTagger
@@ -19,6 +55,34 @@ PrefabInstance:
     - target: {fileID: 4196393441425238801, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
       propertyPath: m_Name
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676348119642153072, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676348119642153072, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676348119642153072, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312025759660754275, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312025759660754275, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312025759660754275, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312025759660754275, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.69411767
       objectReference: {fileID: 0}
     - target: {fileID: 5964608837374418754, guid: 0e8be1d053fe65842a017433932ff2c1, type: 3}
       propertyPath: m_LocalPosition.x

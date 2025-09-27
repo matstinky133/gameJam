@@ -8,6 +8,7 @@ public class TaggingLogicScript : MonoBehaviour
     public float _IframeTime = 3f;
     public float _IframeTimer = 0f;
     private Movement _movement;
+    [SerializeField] GameObject _taggedIndicator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +19,8 @@ public class TaggingLogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.color = _isTagger ? Color.red : Color.white;
+        if (_isTagger) _taggedIndicator.SetActive(true);
+        if (!_isTagger) _taggedIndicator.SetActive(false);
         CheckIFrames();
 
 
