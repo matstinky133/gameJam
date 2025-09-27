@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float _maxSpeed = 20f;
     [SerializeField] float _speed = 0f;
     [SerializeField] float _speedBuildup = 2f;
-    [SerializeField] private int _direction = 1;
+    [SerializeField] public int _direction = 1;
     [SerializeField] float _jumpForce = 3f;
     [SerializeField] float _wallJumpForce = 1f;
     [SerializeField] float _slideForce = 10f;
