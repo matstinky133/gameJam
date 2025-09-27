@@ -3,38 +3,36 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform Player1, Player2;
-    [SerializeField] Vector2[] border;
-    [SerializeField] float _zoomvalue;
-    [SerializeField] float _variable;
-    [SerializeField] float _minZoomValue;
-    void Start()
+    [SerializeField] Vector2 minBorder; // bottom-left
+    [SerializeField] Vector2 maxBorder; // top-right
+    [SerializeField] float zoomMultiplier = 0.5f;
+    [SerializeField] float minZoomValue = 5f;
+    [SerializeField] float zoomSmoothTime = 0.5f;
+
+    private float _targetZoom;
+    private float _zoomVelocity;
+
+    void LateUpdate()
     {
-        
-    }
+        // --- Center between players ---
+        Vector2 midpoint = (Player1.position + Player2.position) / 2;
+        Vector3 desiredPos = new Vector3(midpoint.x, midpoint.y, -10);
 
-    // Update is called once per frame
-    void Update()
-    {
-       // transform.position = ;
-        Vector2 sumPosition =  Player1.transform.position + Player2.transform.position;
-        Vector2 avaragePos = sumPosition / 2;
-        Vector3 camPos = new Vector3(avaragePos.x, avaragePos.y, -10);
+        // --- Clamp to borders ---
+        float clampedX = Mathf.Clamp(desiredPos.x, minBorder.x, maxBorder.x);
+        float clampedY = Mathf.Clamp(desiredPos.y, minBorder.y, maxBorder.y);
 
-        if(camPos.x > border[0].x && camPos.x < border[1].x)
-        {
-            transform.position = new Vector3(camPos.x, transform.position.y, -10);
-        }
-        if (camPos.y < border[0].y && camPos.y > border[1].y)
-        {
-            transform.position = new Vector3(transform.position.x ,camPos.y, -10);
-        }
-         _zoomvalue =     _variable *  Mathf.Abs( Vector3.Distance(Player1.transform.position, Player2.transform.position));
+        transform.position = new Vector3(clampedX, clampedY, -10);
 
-        if(_zoomvalue >= _minZoomValue)
-        {
-            Camera.main.orthographicSize = _zoomvalue;
-        }
-       
+        // --- Zoom based on distance ---
+        float distance = Vector2.Distance(Player1.position, Player2.position);
+        _targetZoom = Mathf.Max(minZoomValue, distance * zoomMultiplier);
 
+        Camera.main.orthographicSize = Mathf.SmoothDamp(
+            Camera.main.orthographicSize,
+            _targetZoom,
+            ref _zoomVelocity,
+            zoomSmoothTime
+        );
     }
 }
