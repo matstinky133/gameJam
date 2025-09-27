@@ -20,7 +20,7 @@ public class PlatformMoveScript : MonoBehaviour
             _timer = 0;
         }
         float sinus = timeToReturn * Mathf.Sin(_speed*(_timer));
-        Debug.Log(sinus);
+       // Debug.Log(sinus);
         //Mathf.Sin()
         transform.position = _startPosition + new Vector3(sinus, 0, 0);
     }
