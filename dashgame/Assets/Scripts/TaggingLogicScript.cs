@@ -46,7 +46,7 @@ public class TaggingLogicScript : MonoBehaviour
                 _IFrames = true;
                 _IframeTimer = 0f;
                 collision.gameObject.GetComponent<TaggingLogicScript>()._isTagger = true;
-                collision.gameObject.GetComponent<TaggingLogicScript>().Lives -= 1;
+                
 
                 _isTagger = false;
                 _movement._direction = _movement._direction * -1;
