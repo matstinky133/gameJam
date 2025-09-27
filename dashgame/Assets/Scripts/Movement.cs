@@ -110,6 +110,7 @@ public class Movement : MonoBehaviour
             _direction = _direction * -1;
             _speed = _maxSpeed;
             _playerRB.AddForce(new Vector2(_wallJumpForce, _wallJumpForce), ForceMode2D.Impulse);
+            _playerRB.AddForceY(_wallJumpForce, ForceMode2D.Impulse);
             _wallJumpTimer = 0;
 
         }
