@@ -69,11 +69,7 @@ public class Movement : MonoBehaviour
     //}
     private void WallSlide2()
     {
-        if (_touchingWall)
-        {
-            //_playerRB.linearVelocityY = -2;
-            _playerRB.linearVelocityX = 0f;     
-        }
+
         if (!_isgrounded && _touchingWall &&  _playerRB.linearVelocityY <= 0)
         {
             

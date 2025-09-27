@@ -1,19 +1,23 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UILogicScript : MonoBehaviour
 {
     [SerializeField] TaggingLogicScript _player1, _player2;
     [SerializeField] TextMeshProUGUI _winnerText;
     [SerializeField] TextMeshProUGUI _timerText;
+    [SerializeField] Button _restartButton;
+    [SerializeField] Button _quitButton;
     [SerializeField] private float _time;
     [SerializeField] private float _timer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _restartButton.gameObject.SetActive(false);
+        _quitButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class UILogicScript : MonoBehaviour
             //
             //ChangeTimer();
             AssignRandomTagger();
+            
 
         }
     }
@@ -77,11 +82,15 @@ public class UILogicScript : MonoBehaviour
         {
             _winnerText.gameObject.SetActive(true);
             _winnerText.text = "Winner is player 2!";
+            _restartButton.gameObject.SetActive(true);
+            _quitButton.gameObject.SetActive(true);
         }
         if (_player2.Lives == 0)
         {
             _winnerText.gameObject.SetActive(true);
             _winnerText.text = "Winner is player 1!";
+            _restartButton.gameObject.SetActive(true);
+            _quitButton.gameObject.SetActive(true);
         }
 
     }

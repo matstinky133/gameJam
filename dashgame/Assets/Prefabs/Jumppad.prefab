@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b47e4af71a81242811a922dc2439c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpPadScript
-  _force: 10
+  _force: 20
 --- !u!1 &7427417365769277753
 GameObject:
   m_ObjectHideFlags: 0
