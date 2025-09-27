@@ -83,7 +83,7 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        _playerRB.linearVelocityX = _speed * _direction * Time.deltaTime;
+        _playerRB.linearVelocityX = _speed * _direction;
 
 
         if (_speed < _maxSpeed && !_touchingWall)
