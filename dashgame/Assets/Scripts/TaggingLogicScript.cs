@@ -22,12 +22,7 @@ public class TaggingLogicScript : MonoBehaviour
         sr.color = _isTagger ? Color.red : Color.white;
         CheckIFrames();
 
-        if (Lives == 0)
-        {
-            Destroy(gameObject);
 
-
-        }
     }
 
     private void CheckIFrames()
@@ -41,7 +36,8 @@ public class TaggingLogicScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            if(collision.gameObject.GetComponent<TaggingLogicScript>()._isTagger == false && _isTagger == true && collision.gameObject.GetComponent<TaggingLogicScript>()._IFrames == false)
+            _movement._direction = _movement._direction * -1;
+            if (collision.gameObject.GetComponent<TaggingLogicScript>()._isTagger == false && _isTagger == true && collision.gameObject.GetComponent<TaggingLogicScript>()._IFrames == false)
             {
                 _IFrames = true;
                 _IframeTimer = 0f;
@@ -49,7 +45,7 @@ public class TaggingLogicScript : MonoBehaviour
                 
 
                 _isTagger = false;
-                _movement._direction = _movement._direction * -1;
+                
 
             }
         }
