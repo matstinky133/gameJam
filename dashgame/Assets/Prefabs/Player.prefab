@@ -327,7 +327,7 @@ MonoBehaviour:
   _direction: 1
   _jumpForce: 6.07
   _wallJumpForce: 6.25
-  _slideForce: -1
+  _slideForce: -2
   _isgrounded: 0
   _touchingWall: 0
   _playerControls:
