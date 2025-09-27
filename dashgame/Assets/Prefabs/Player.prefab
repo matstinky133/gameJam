@@ -327,11 +327,11 @@ MonoBehaviour:
   _speed: 0
   _speedBuildup: 2
   _direction: 1
-  _jumpForce: 6.07
-  _wallJumpForce: 6.25
-  _slideForce: -4.63
+  _jumpForce: 6.53
+  _wallJumpForce: 9.6
+  _slideForce: -6
   _isgrounded: 0
-  _touchingWall: 0
+  _touchingWall: 1
   _playerControls:
     m_Name: Player Controls
     m_Type: 1
