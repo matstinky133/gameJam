@@ -41,7 +41,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Jump();
+        WallJump();
 
     }
 
@@ -50,8 +51,8 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Jump();
-        WallJump();
+        
+        
         //if(_touchingWall)
         //{
         //    _playerRB.linearVelocityY = _slideForce;
